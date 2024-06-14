@@ -1,5 +1,5 @@
 import cv2
-# import numpy as np
+import numpy as np
 #
 # kernel = np.ones((5, 5), np.uint8)
 # # Вывод картинки
@@ -80,12 +80,51 @@ import cv2
 # cv2.waitKey(5000)
 
 
-img = cv2.imread('images/73338.jpg')
-img = cv2.resize(img, (img.shape[1] // 5, img.shape[0] // 5))
+# img = cv2.imread('images/73338.jpg')
+# img = cv2.resize(img, (img.shape[1] // 5, img.shape[0] // 5))
 # img = cv2.cvtColor(img, cv2.COLOR_BGR2HSV)
 # img = cv2.cvtColor(img, cv2.COLOR_BGR2LAB)
 # img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-r, g, b, = cv2.split(img) # Разделение картинки на слои
-img = cv2.merge(b, g, r) # Соединение слоёв картинки
-cv2.imshow('klava', img)
-cv2.waitKey(5000)
+# r, g, b, = cv2.split(img) # Разделение картинки на слои
+# img = cv2.merge(b, g, r) # Соединение слоёв картинки
+# cv2.imshow('klava', img)
+# cv2.waitKey(5000)
+
+
+# img = np.zeros((350, 350), dtype='uint8')
+#
+# circle = cv2.circle(img.copy(), (0, 0), 50, 255, -1)
+# square = cv2.rectangle(img.copy(), (25, 25), (250, 350), 255, -1)
+
+# img = cv2.bitwise_and(circle, square) # показ пересечения двух фигур
+# img = cv2.bitwise_or(circle, square) # показ обоих фигур
+# img = cv2.bitwise_xor(circle, square) # нверсия img = cv2.bitwise_and(circle, square)
+# img = cv2.bitwise_not(square) # инвертирование фигуры и фона
+#
+# ----------------------------------------------------------------------------------------------------------------------
+# photo = cv2.imread('images/color_text.jpg')
+# img = np.zeros(photo.shape[:2], dtype='uint8')
+#
+# circle = cv2.circle(img.copy(), (0, 0), 50, 255, -1)
+# square = cv2.rectangle(img.copy(), (25, 25), (250, 350), 255, -1)
+#
+# img = cv2.bitwise_and(photo, photo, mask=square)
+#
+#
+# cv2.imshow('Result', img)
+# cv2.waitKey(5000)
+
+
+# img = cv2.imread('images/x_3cacfc00.jpg')
+#
+# gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+#
+# face = cv2.CascadeClassifier('face.xml')
+#
+# results = face.detectMultiScale(gray, scaleFactor=1.1, minNeighbors=10)
+#
+# for (x, y, w, h) in results:
+#     cv2.rectangle(img, (x, y), (x+w, y+h), (0, 0, 255), thickness=3)
+#
+# cv2.imshow('my_face', img)
+# cv2.waitKey(5000)
